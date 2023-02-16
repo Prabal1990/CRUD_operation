@@ -1,0 +1,61 @@
+<h1> Update Page</h1>
+<h2> Update an entry using its unique id [primary key]</h2>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{ person.id }}">
+    <div>
+      <label for="first_name">first_name:</label>
+      <input type="text" id="first_name" name="first_name" value="{{ person.first_name }}">
+    </div>
+    <div>
+      <label for="last_name">last_name:</label>
+      <input type="text" id="last_name" name="last_name" value="{{ person.last_name }}">
+    </div>
+    <div>
+        <label for="email">email:</label>
+        <input type="text" id="email" name="email" value="{{ person.email }}">
+      </div>
+    <div>
+      <label for="id">id:</label>
+      <input type="text" id="id" name="id" value="{{ person.id }}">
+    </div>
+    <div>
+      <input type="submit" value="Update">
+    </div>
+  
+  </form>
+  
+  
+  <div>
+  
+  {% if persons %}
+    <p>First Name: {{ persons.first_name }}</p>
+    <p>Last Name: {{ persons.last_name }}</p>
+    <p>Email: {{ persons.email }}</p>
+  {% endif %}
+  </div>
+  
+  
+  <!-- <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for person in persons %}
+      <tr>
+        <td>{{ person.id }}</td>
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+        <td>{{ person.city }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table> -->
+  
+  

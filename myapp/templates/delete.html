@@ -1,0 +1,25 @@
+<h1> Delete Page</h1>
+<h2> Delete an entry using its unique id [primary key]</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    <!-- <input type="hidden" name="id" value="{{ person.id }}"> -->
+
+    <div>
+      <label for="id">id:</label>
+      <input type="text" id="id" name="id" value="{{ person.id }}">
+    </div>
+    <div>
+      <input type="submit" value="Delete entry">
+    </div>
+  
+  </form>
+  
+  
+  <div>
+  
+  {% if persons %}
+    <p>First Name: {{ persons.first_name }}</p>
+    <p>Last Name: {{ persons.last_name }}</p>
+    <p>Email: {{ persons.email }}</p>
+  {% endif %}
+  </div>
